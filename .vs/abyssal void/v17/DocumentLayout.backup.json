@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pzcat\\abyssal void\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3D5D38CC-AAF3-4EA6-26A8-71861D6FF767}|Assembly-CSharp.csproj|c:\\users\\pzcat\\abyssal void\\assets\\scripts\\slimeai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D5D38CC-AAF3-4EA6-26A8-71861D6FF767}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\slimeai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D5D38CC-AAF3-4EA6-26A8-71861D6FF767}|Assembly-CSharp.csproj|C:\\Users\\pzcat\\abyssal void\\assets\\scripts\\playervisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D5D38CC-AAF3-4EA6-26A8-71861D6FF767}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playervisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D5D38CC-AAF3-4EA6-26A8-71861D6FF767}|Assembly-CSharp.csproj|C:\\Users\\pzcat\\abyssal void\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D5D38CC-AAF3-4EA6-26A8-71861D6FF767}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D5D38CC-AAF3-4EA6-26A8-71861D6FF767}|Assembly-CSharp.csproj|C:\\Users\\pzcat\\abyssal void\\assets\\scripts\\gameinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D5D38CC-AAF3-4EA6-26A8-71861D6FF767}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SlimeAi.cs",
+              "DocumentMoniker": "C:\\Users\\pzcat\\abyssal void\\Assets\\Scripts\\SlimeAi.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SlimeAi.cs",
+              "ToolTip": "C:\\Users\\pzcat\\abyssal void\\Assets\\Scripts\\SlimeAi.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SlimeAi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T11:57:47.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameInput.cs",
+              "DocumentMoniker": "C:\\Users\\pzcat\\abyssal void\\Assets\\Scripts\\GameInput.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameInput.cs",
+              "ToolTip": "C:\\Users\\pzcat\\abyssal void\\Assets\\Scripts\\GameInput.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T14:30:45.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\pzcat\\abyssal void\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\pzcat\\abyssal void\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T14:30:44.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerVisual.cs",
+              "DocumentMoniker": "C:\\Users\\pzcat\\abyssal void\\Assets\\Scripts\\PlayerVisual.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerVisual.cs",
+              "ToolTip": "C:\\Users\\pzcat\\abyssal void\\Assets\\Scripts\\PlayerVisual.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerVisual.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T14:30:30.769Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

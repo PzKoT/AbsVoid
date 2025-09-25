@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     private void Movement()
     {
         Vector2 inputVector = GameInput.Instance.GetMovementVector();
-        inputVector = inputVector.normalized;
+        //inputVector = inputVector.normalized;
         rb.MovePosition(rb.position + inputVector * (movingSpeed * Time.fixedDeltaTime));
 
 
