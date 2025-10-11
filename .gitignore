@@ -17,3 +17,5 @@
 *.mdb
 *.unityproj
 *.abd
+UserSettings/
+.vsconfig
