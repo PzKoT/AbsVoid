@@ -2,30 +2,36 @@ using UnityEngine;
 
 public class SlimeAI : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 2f; // Скорость движения слайма
-    [SerializeField] private float detectionRange = 5f; // Радиус обнаружения игрока
-    [SerializeField] private Transform player; // Ссылка на игрока
-    [SerializeField] private float mass = 1f; // Масса слайма
-    [SerializeField] private float drag = 5f; // Сопротивление движения
-    [SerializeField] private float rayDistance = 2f; // Длина луча для проверки препятствий
-    [SerializeField] private LayerMask obstacleLayer; // Слой для препятствий
-    [SerializeField] private float flipDelay = 0.1f; // Задержка перед флипом спрайта
-    [SerializeField] private float rayAngle = 30f; // Угол для боковых лучей (градусы)
-    [SerializeField] private float avoidanceSmoothing = 5f; // Сглаживание направления
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float detectionRange = 5f;
+    [SerializeField] private Transform player;
+    [SerializeField] private float mass = 1f;
+    [SerializeField] private float drag = 5f;
+    [SerializeField] private float rayDistance = 2f;
+    [SerializeField] private LayerMask obstacleLayer;
+    [SerializeField] private float flipDelay = 0.3f;
+    [SerializeField] private float rayAngle = 30f;
+    [SerializeField] private float avoidanceSmoothing = 5f;
 
     private Rigidbody2D rb;
     private SpriteRenderer visual;
-    private float directionTimer; // Таймер для отслеживания направления
-    private float lastDirectionX; // Последнее направление по X
-    private Vector2 currentDirection; // Текущее направление движения
+    private Animator anim;
+    private float directionTimer;
+    private float lastDirectionX;
+    private Vector2 currentDirection;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         visual = transform.Find("SlimeVisual")?.GetComponent<SpriteRenderer>();
+        anim = transform.Find("SlimeVisual")?.GetComponent<Animator>();
         if (visual == null)
         {
             Debug.LogError($"SlimeVisual не найден для слайма {gameObject.name}!");
+        }
+        if (anim == null)
+        {
+            Debug.LogError($"Animator не найден на SlimeVisual для слайма {gameObject.name}!");
         }
         if (player == null)
         {
@@ -43,7 +49,7 @@ public class SlimeAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (player == null || visual == null) return;
+        if (player == null || visual == null || anim == null) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         if (distanceToPlayer <= detectionRange)
@@ -53,25 +59,25 @@ public class SlimeAI : MonoBehaviour
             currentDirection = Vector2.Lerp(currentDirection, newVelocity, avoidanceSmoothing * Time.fixedDeltaTime);
             rb.linearVelocity = currentDirection * moveSpeed;
             UpdateSpriteFlip(currentDirection.x);
+            anim.SetBool("IsMoving", true);
         }
         else
         {
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, Time.fixedDeltaTime * drag);
             directionTimer = 0f;
             currentDirection = Vector2.zero;
+            anim.SetBool("IsMoving", false);
         }
     }
 
     private Vector2 AvoidObstacles(Vector2 targetDirection)
     {
-        // Два луча спереди под углом
         Vector2 rightRayDir = Quaternion.Euler(0, 0, -rayAngle) * targetDirection;
         Vector2 leftRayDir = Quaternion.Euler(0, 0, rayAngle) * targetDirection;
 
         RaycastHit2D hitRightRay = Physics2D.Raycast(transform.position, rightRayDir, rayDistance, obstacleLayer);
         RaycastHit2D hitLeftRay = Physics2D.Raycast(transform.position, leftRayDir, rayDistance, obstacleLayer);
 
-        // Если хотя бы один луч свободен
         if (hitRightRay.collider == null && hitLeftRay.collider != null)
         {
             return rightRayDir.normalized;
@@ -82,7 +88,6 @@ public class SlimeAI : MonoBehaviour
         }
         else if (hitRightRay.collider != null && hitLeftRay.collider != null)
         {
-            // Оба пути заблокированы — пробуем боковые пути
             Vector2 rightSideDir = Vector2.Perpendicular(targetDirection);
             Vector2 leftSideDir = -rightSideDir;
 
@@ -99,11 +104,10 @@ public class SlimeAI : MonoBehaviour
             }
             else
             {
-                // Оба боковых пути заблокированы — отступаем назад
                 return -targetDirection.normalized;
             }
         }
-        return targetDirection; // Путь свободен
+        return targetDirection;
     }
 
     private void UpdateSpriteFlip(float directionX)
@@ -120,6 +124,7 @@ public class SlimeAI : MonoBehaviour
         if (directionTimer >= flipDelay)
         {
             visual.flipX = directionX < 0;
+            anim.SetBool("IsFacingRight", directionX >= 0);
         }
     }
 

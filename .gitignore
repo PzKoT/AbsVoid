@@ -1,21 +1,26 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Aa]ssets/Plugins/Editor/JetBrains*
+# === Unity ===
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# === IDE ===
+.vs/
+.vsconfig
+[Aa]ssets/Plugins/Editor/JetBrains*
+
+# === Visual Studio / Rider ===
 *.csproj
 *.sln
 *.suo
-*.tmp
 *.user
 *.userprefs
-*.pidb
 *.booproj
-*.svd
-*.pdb
-*.mdb
-*.unityproj
-*.abd
-UserSettings/
-.vsconfig
+
+# === Misc ===
+*.tmp
+*.log
+*.log.*
