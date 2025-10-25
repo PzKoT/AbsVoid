@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerVisual : MonoBehaviour
 {
@@ -12,16 +13,21 @@ public class PlayerVisual : MonoBehaviour
     }
     private void Update()
     {
+        if (PauseMenu.IsPaused) return;
+
+        if (Player.Instance == null || GameInput.Instance == null) return;
+
         animator.SetBool(IS_RUNNING, Player.Instance.IsRunning());
         AdjustPlayerFacingDirection();
     }
-    
+
     private void AdjustPlayerFacingDirection()
     {
-        Vector3 mousePos = GameInput.Instance.GetMousePosition();
-        Vector3 playerPos = Player.Instance.GetPlayerScreenPosition();
+        if (Player.Instance == null || GameInput.Instance == null) return;
 
-        if (mousePos.x < playerPos.x) spriteRenderer.flipX = true;
-        else spriteRenderer.flipX = false;
+        Vector3 mousePos = GameInput.Instance.GetMouseWorldPosition();
+        Vector3 playerPos = transform.position;
+
+        spriteRenderer.flipX = mousePos.x < playerPos.x;
     }
 }
