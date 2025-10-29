@@ -666,7 +666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: detectionRange
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: avoidanceSmoothing
@@ -1093,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: detectionRange
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4054554681445624904, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_Name
@@ -1170,7 +1170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: moveSpeed
-      value: 3
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: rayDistance
