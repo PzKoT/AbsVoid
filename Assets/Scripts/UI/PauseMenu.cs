@@ -9,10 +9,18 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button exitToHubButton;
+    [SerializeField] private Button showTutorialButton;
+    [SerializeField] private Button quitGameButton;
+
+    [Header("Quit Confirmation")]
+    [SerializeField] private GameObject quitConfirmPanel;     // Панель подтверждения
+    [SerializeField] private Button confirmYesButton;         // "Да"
+    [SerializeField] private Button confirmNoButton;          // "Нет"
 
     [Header("Settings")]
     [SerializeField] private string hubSceneName = "Hub";
 
+    private TutorialController tutorialController;
     private bool isPaused = false;
     public static bool IsPaused { get; private set; }
 
@@ -20,7 +28,6 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake()
     {
-        // Создаём и включаем InputActions только для UI
         inputActions = new PlayerInputActions();
         inputActions.UI.Enable();
         inputActions.UI.Pause.performed += OnPausePerformed;
@@ -28,33 +35,43 @@ public class PauseMenu : MonoBehaviour
         if (pauseMenuUI != null)
             pauseMenuUI.SetActive(false);
 
+        if (quitConfirmPanel != null)
+            quitConfirmPanel.SetActive(false);
+
         resumeButton?.onClick.AddListener(Resume);
         exitToHubButton?.onClick.AddListener(ExitToHub);
+        showTutorialButton?.onClick.AddListener(ForceShowTutorial);
+        quitGameButton?.onClick.AddListener(ShowQuitConfirmation);
 
-        Debug.Log("✅ PauseMenu инициализирован");
+        confirmYesButton?.onClick.AddListener(QuitGame);
+        confirmNoButton?.onClick.AddListener(HideQuitConfirmation);
+
+        tutorialController = Object.FindFirstObjectByType<TutorialController>();
+        if (tutorialController == null)
+        {
+            Debug.LogWarning("TutorialController не найден в сцене!");
+        }
+
+        Debug.Log("PauseMenu инициализирован");
     }
 
     private void OnDestroy()
     {
-        // Перед уничтожением — убедимся, что управление включено
         if (GameInput.Instance != null)
             GameInput.Instance.EnablePlayerInput();
 
         if (inputActions != null)
         {
             inputActions.UI.Pause.performed -= OnPausePerformed;
-
-            // Безопасно выключаем все карты
             if (inputActions.Player.enabled)
                 inputActions.Player.Disable();
             if (inputActions.UI.enabled)
                 inputActions.UI.Disable();
-
             inputActions.Dispose();
             inputActions = null;
         }
 
-        Debug.Log("❎ PauseMenu уничтожен");
+        Debug.Log("PauseMenu уничтожен");
     }
 
     private void OnPausePerformed(InputAction.CallbackContext ctx)
@@ -82,11 +99,13 @@ public class PauseMenu : MonoBehaviour
         if (GameInput.Instance != null)
             GameInput.Instance.DisablePlayerInput();
 
-        Debug.Log("⏸ Игра на паузе");
+        Debug.Log("Игра на паузе");
     }
 
     public void Resume()
     {
+        HideQuitConfirmation(); // На всякий случай
+
         if (pauseMenuUI != null)
             pauseMenuUI.SetActive(false);
 
@@ -97,12 +116,13 @@ public class PauseMenu : MonoBehaviour
         if (GameInput.Instance != null)
             GameInput.Instance.EnablePlayerInput();
 
-        Debug.Log("▶ Игра возобновлена");
+        Debug.Log("Игра возобновлена");
     }
 
     public void ExitToHub()
     {
-        // Восстанавливаем время и ввод ДО загрузки
+        HideQuitConfirmation();
+
         Time.timeScale = 1f;
         IsPaused = false;
         isPaused = false;
@@ -113,7 +133,51 @@ public class PauseMenu : MonoBehaviour
         if (GameInput.Instance != null)
             GameInput.Instance.EnablePlayerInput();
 
-        Debug.Log("🏠 Переход в хаб...");
+        Debug.Log("Переход в хаб...");
         SceneManager.LoadScene(hubSceneName);
+    }
+
+    private void ForceShowTutorial()
+    {
+        HideQuitConfirmation();
+
+        if (tutorialController != null)
+        {
+            tutorialController.StartTutorialManually();
+        }
+        else
+        {
+            Debug.LogError("TutorialController не найден! Нельзя запустить туториал.");
+        }
+    }
+
+    // Показать панель подтверждения
+    private void ShowQuitConfirmation()
+    {
+        if (quitConfirmPanel != null)
+        {
+            quitConfirmPanel.SetActive(true);
+        }
+    }
+
+    // Скрыть панель подтверждения
+    private void HideQuitConfirmation()
+    {
+        if (quitConfirmPanel != null)
+        {
+            quitConfirmPanel.SetActive(false);
+        }
+    }
+
+    // Выйти из игры
+    private void QuitGame()
+    {
+        Debug.Log("Выход из игры...");
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

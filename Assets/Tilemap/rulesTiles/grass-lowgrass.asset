@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: grass-lowgrass
+  m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.RuleTile
+  m_DefaultSprite: {fileID: 70345852487738077, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Id: 0
+    m_Sprites:
+    - {fileID: -1721849657, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -1075986194, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: 1524750625, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -1333721809, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -1283727036, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: 1359488734, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: 708562497, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -1078424041, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -656885467, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -176042792, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -304348468, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -811762483, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -1474943780, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: -1474943780, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: 312974345, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    - {fileID: 1469401545, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 1
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 
+    m_NeighborPositions:
+    - {x: -1, y: 1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: 1, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: -1, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: -1, z: 0}
+    m_RuleTransform: 0
