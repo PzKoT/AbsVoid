@@ -3,22 +3,21 @@ using UnityEngine;
 
 public class SlimeAttack : MonoBehaviour
 {
-    [SerializeField] private int damage = 1;
+    [SerializeField] private int damage = 10;
     [SerializeField] private float attackCooldown = 1f;
 
-    private float timer;
+    private float lastAttackTime = 0f;
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        timer -= Time.deltaTime;
-    }
-
-    private void OnCollisionStay2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Player") && timer <= 0f)
+        // Проверяем, есть ли Health у объекта
+        Health health = other.GetComponent<Health>();
+        if (health != null && Time.time >= lastAttackTime + attackCooldown)
         {
-            col.gameObject.GetComponent<Health>()?.TakeDamage(damage);
-            timer = attackCooldown;
+            health.TakeDamage(damage);
+            lastAttackTime = Time.time;
+
+            Debug.Log($"Слайм нанёс {damage} урона!");
         }
     }
 }

@@ -681,7 +681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: detectionRange
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: avoidanceSmoothing
@@ -6188,6 +6188,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 31
+      m_TileSpriteIndex: 63
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 32
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -11072,7 +11082,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 182
     m_Data: {fileID: 11400000, guid: c4474f0bca5ca2445a16b6b3bfbedcc4, type: 2}
-  - m_RefCount: 825
+  - m_RefCount: 826
     m_Data: {fileID: 11400000, guid: a816fa89c79591644a43cae5a8605295, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -11201,10 +11211,10 @@ Tilemap:
     m_Data: {fileID: -656885467, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
   - m_RefCount: 117
     m_Data: {fileID: -304348468, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
-  - m_RefCount: 364
+  - m_RefCount: 365
     m_Data: {fileID: -1078424041, guid: fe50d56a5ba14054a84f4f663653b4e3, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1007
+  - m_RefCount: 1008
     m_Data:
       e00: 1
       e01: 0
@@ -11287,7 +11297,7 @@ Tilemap:
     m_Data: {r: 107.8634, g: 107.8634, b: 107.8634, a: 107.8634}
   - m_RefCount: 0
     m_Data: {r: 107.8634, g: 107.8634, b: 107.8634, a: 107.8634}
-  - m_RefCount: 1007
+  - m_RefCount: 1008
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -11468,7 +11478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: detectionRange
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4054554681445624904, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_Name

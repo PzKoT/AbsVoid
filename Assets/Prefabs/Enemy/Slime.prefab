@@ -125,6 +125,8 @@ GameObject:
   - component: {fileID: 6693189156320223019}
   - component: {fileID: 6512881895414894487}
   - component: {fileID: 832728226171828341}
+  - component: {fileID: 3824749710342636630}
+  - component: {fileID: 2818329571160823166}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -205,7 +207,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -236,3 +238,32 @@ MonoBehaviour:
   flipDelay: 0.2
   rayAngle: 30
   avoidanceSmoothing: 5
+--- !u!114 &3824749710342636630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054554681445624904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb45456fc1ed274284bb1ed88559915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlimeAttack
+  damage: 1
+  attackCooldown: 1
+--- !u!114 &2818329571160823166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054554681445624904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e514fb97a59e1bd468a126670d7b5e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 5
+  healthBar: {fileID: 0}
+  currentHealth: 0
