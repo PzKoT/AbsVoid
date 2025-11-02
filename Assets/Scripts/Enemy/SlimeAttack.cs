@@ -1,23 +1,34 @@
-// Assets/Scripts/Enemy/SlimeAttack.cs
 using UnityEngine;
 
 public class SlimeAttack : MonoBehaviour
 {
-    [SerializeField] private int damage = 10;
-    [SerializeField] private float attackCooldown = 1f;
+    [SerializeField] private int damage = 1;
+    [SerializeField] private float attackRate = 1f; // раз в секунду
 
-    private float lastAttackTime = 0f;
+    private float nextAttackTime = 0f;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        // Проверяем, есть ли Health у объекта
-        Health health = other.GetComponent<Health>();
-        if (health != null && Time.time >= lastAttackTime + attackCooldown)
-        {
-            health.TakeDamage(damage);
-            lastAttackTime = Time.time;
+        // НЕ НАНОСИТЬ УРОН ДРУГИМ СЛАЙМАМ!
+        if (other.CompareTag("Enemy")) return;
 
-            Debug.Log($"Слайм нанёс {damage} урона!");
+        if (Time.time >= nextAttackTime)
+        {
+            Health health = other.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+                nextAttackTime = Time.time + attackRate;
+
+                // Отталкивание
+                Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    Vector2 pushDir = (other.transform.position - transform.position).normalized;
+                    rb.AddForce(pushDir * 4f, ForceMode2D.Impulse);
+                }
+            }
         }
     }
+
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3081771206135781800}
   - component: {fileID: 6831953906120850279}
   - component: {fileID: 5571606307686034892}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SlimeVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,13 +123,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4924784355103702164}
   - component: {fileID: 6693189156320223019}
+  - component: {fileID: 8357793732426485646}
   - component: {fileID: 6512881895414894487}
   - component: {fileID: 832728226171828341}
   - component: {fileID: 3824749710342636630}
   - component: {fileID: 2818329571160823166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +178,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &6512881895414894487
+--- !u!70 &8357793732426485646
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,6 +209,43 @@ CapsuleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.16}
+  m_Size: {x: 1.3, y: 0.9}
+  m_Direction: 1
+--- !u!70 &6512881895414894487
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054554681445624904}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -251,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlimeAttack
   damage: 1
-  attackCooldown: 1
+  attackRate: 1
 --- !u!114 &2818329571160823166
 MonoBehaviour:
   m_ObjectHideFlags: 0
