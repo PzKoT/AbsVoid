@@ -47,8 +47,17 @@ public class Health : MonoBehaviour
         }
         else if (CompareTag("Enemy"))
         {
-            // Враг умер
+            // ДРОП XP-ОРБА!
+            //GameObject xpOrb = Instantiate(xpOrbPrefab, transform.position, Quaternion.identity);
+            //XPOrb orbScript = xpOrb.GetComponent<XPOrb>();
+            //orbScript.xpValue = GetXPReward();
+
             Destroy(gameObject);
         }
+    }
+
+    private int GetXPReward()
+    {
+        return Random.Range(10, 30);
     }
 }
