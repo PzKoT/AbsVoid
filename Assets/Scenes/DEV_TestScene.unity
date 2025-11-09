@@ -12204,7 +12204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: obstacleLayer.m_Bits
-      value: 256
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4054554681445624904, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_Name
