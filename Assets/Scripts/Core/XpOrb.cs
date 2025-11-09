@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class XPOrb : MonoBehaviour
 {
-    [SerializeField] private int xpValue = 10;
+    [SerializeField] public int xpValue = 10;
     [SerializeField] private float bobSpeed = 2f;
     [SerializeField] private float bobHeight = 0.3f;
     [SerializeField] private float attractionSpeed = 5f;

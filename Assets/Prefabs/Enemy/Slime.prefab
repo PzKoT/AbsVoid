@@ -272,7 +272,7 @@ MonoBehaviour:
   rayDistance: 1.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8
   flipDelay: 0.2
   rayAngle: 30
   avoidanceSmoothing: 5

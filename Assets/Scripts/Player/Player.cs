@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     [Header("Pickup")]
     [SerializeField] private float pickupRadius = 1.5f;
-    [SerializeField] private LayerMask xpOrbLayer = 1 << 9;
+    [SerializeField] private LayerMask xpOrbLayer = 1 << 11;
 
     [Header("Systems")]
     [SerializeField] private ExperienceSystem experienceSystem;
@@ -34,16 +34,23 @@ public class Player : MonoBehaviour
     {
         Collider2D[] orbs = Physics2D.OverlapCircleAll(transform.position, pickupRadius, xpOrbLayer);
 
-        //Debug.Log($"Найдено орбов: {orbs.Length}");
+        Debug.Log($"Найдено орбов: {orbs.Length}");
 
         foreach (Collider2D orbCollider in orbs)
         {
+            Debug.Log($"Проверяем орб: {orbCollider.name} на слое {orbCollider.gameObject.layer}");
+
             XPOrb orb = orbCollider.GetComponent<XPOrb>();
             if (orb != null)
             {
+                Debug.Log($"Орб найден! XP = {orb.xpValue}");
                 int xp = orb.Pickup();
                 experienceSystem.AddXP(xp);
-                Debug.Log($"Подобран орб: +{xp} XP");
+                Debug.Log($"Подобран! +{xp} XP");
+            }
+            else
+            {
+                Debug.LogWarning($"Коллайдер найден, но XPOrb компонент отсутствует!");
             }
         }
     }

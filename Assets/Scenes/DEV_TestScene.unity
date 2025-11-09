@@ -12403,6 +12403,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 8738018939980639751, guid: 56c7ec493bbde834583e37b7d47ef36e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8738018939980639751, guid: 56c7ec493bbde834583e37b7d47ef36e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8764212237267276370, guid: 56c7ec493bbde834583e37b7d47ef36e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
