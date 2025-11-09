@@ -304,4 +304,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 5
   healthBar: {fileID: 0}
+  xpOrbPrefab: {fileID: 4302292175187178253, guid: 442560b0970433e42b197dc7640fb0d6, type: 3}
   currentHealth: 0

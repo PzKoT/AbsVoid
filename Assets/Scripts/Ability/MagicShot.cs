@@ -8,8 +8,8 @@ namespace Game.Abilities
     {
         [Header("Magic Shot")]
         [SerializeField] private GameObject projectilePrefab;
-        [SerializeField] private int projectileCount = 1;
-        [SerializeField] private float attackInterval = 3f;
+        [SerializeField] private int projectileCount = 3;
+        [SerializeField] private float attackInterval = 5f;
 
         private float nextAttackTime = 0f;
 

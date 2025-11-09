@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private Slider healthBar; // опционально
-
+    [SerializeField] private GameObject xpOrbPrefab;
     [SerializeField] private int currentHealth;
 
     private void Awake()
@@ -42,15 +42,16 @@ public class Health : MonoBehaviour
     {
         if (CompareTag("Player"))
         {
-            // Игрок умер → в хаб
             UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
         }
         else if (CompareTag("Enemy"))
         {
-            // ДРОП XP-ОРБА!
-            //GameObject xpOrb = Instantiate(xpOrbPrefab, transform.position, Quaternion.identity);
-            //XPOrb orbScript = xpOrb.GetComponent<XPOrb>();
-            //orbScript.xpValue = GetXPReward();
+            if (xpOrbPrefab != null)
+            {
+                GameObject xpOrb = Instantiate(xpOrbPrefab, transform.position, Quaternion.identity);
+                XPOrb orbScript = xpOrb.GetComponent<XPOrb>();
+                // orbScript.xpValue = GetXPReward(); // если нужно установить значение
+            }
 
             Destroy(gameObject);
         }

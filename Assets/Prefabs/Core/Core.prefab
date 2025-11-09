@@ -3809,6 +3809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 10
   healthBar: {fileID: 7863245259778452533}
+  xpOrbPrefab: {fileID: 4302292175187178253, guid: 442560b0970433e42b197dc7640fb0d6, type: 3}
   currentHealth: 5
 --- !u!114 &1369876377411871212
 MonoBehaviour:
@@ -3826,7 +3827,7 @@ MonoBehaviour:
   damage: 5
   projectileSpeed: 10
   maxRange: 15
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3152324839954931603, guid: 2d43ff244a43b274f8bb88c34a776fd0, type: 3}
   projectileCount: 1
   attackInterval: 3
 --- !u!1001 &3219751348886639646

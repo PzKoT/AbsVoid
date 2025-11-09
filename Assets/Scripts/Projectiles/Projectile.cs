@@ -17,12 +17,18 @@ namespace Game.Projectiles
             speed = spd;
             damage = dmg;
             owner = own;
+
+            // ѕоворачиваем снар€д в направлении движени€
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
             Destroy(gameObject, lifetime);
         }
 
         private void Update()
         {
-            transform.Translate(direction * speed * Time.deltaTime);
+            // ƒвижение в фиксированном направлении
+            transform.Translate(direction * speed * Time.deltaTime, Space.World);
         }
 
         private void OnTriggerEnter2D(Collider2D other)

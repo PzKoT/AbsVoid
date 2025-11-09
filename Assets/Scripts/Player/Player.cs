@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
             XPOrb orb = orbCollider.GetComponent<XPOrb>();
             if (orb != null)
             {
-                int xp = orb.Pickup(); // ← ВЫЗЫВАЕМ МЕТОД
+                int xp = orb.Pickup();
                 experienceSystem.AddXP(xp);
             }
         }
