@@ -32,8 +32,9 @@ public class Player : MonoBehaviour
 
     private void PickupXPOrbs()
     {
-        // Используем правильный LayerMask
         Collider2D[] orbs = Physics2D.OverlapCircleAll(transform.position, pickupRadius, xpOrbLayer);
+
+        //Debug.Log($"Найдено орбов: {orbs.Length}");
 
         foreach (Collider2D orbCollider in orbs)
         {
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
             {
                 int xp = orb.Pickup();
                 experienceSystem.AddXP(xp);
-                Debug.Log($"Подобран орб: +{xp} XP"); // Для отладки
+                Debug.Log($"Подобран орб: +{xp} XP");
             }
         }
     }
@@ -67,4 +68,6 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, pickupRadius);
     }
+
+    // Убираем устаревшие методы FindObjectsOfType
 }

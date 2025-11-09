@@ -23,18 +23,15 @@ namespace Game.Projectiles
             rb = GetComponent<Rigidbody2D>();
 
             // Поворачиваем снаряд в направлении движения
-            if (direction != Vector2.zero)
-            {
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            }
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             Destroy(gameObject, lifetime);
         }
 
         private void Start()
         {
-            // Двигаем снаряд через Rigidbody
+            // Двигаем снаряд через Rigidbody для правильной физики
             if (rb != null)
             {
                 rb.linearVelocity = direction * speed;
@@ -46,23 +43,19 @@ namespace Game.Projectiles
             // Игнорируем коллизии с владельцем
             if (other.gameObject == owner) return;
 
-            // Проверяем, что объект на нужном слое
-            if (((1 << other.gameObject.layer) & collisionLayers) == 0) return;
+            // Игнорируем коллизии с другими снарядами (по слою)
+            if (other.gameObject.layer == gameObject.layer) return;
 
-            Health health = other.GetComponent<Health>();
-            if (health != null)
+            // Проверяем слой коллизии
+            if (((1 << other.gameObject.layer) & collisionLayers) != 0)
             {
-                health.TakeDamage(damage);
-                Debug.Log($"Попадание по {other.name}! Урон: {damage}");
+                Health health = other.GetComponent<Health>();
+                if (health != null)
+                {
+                    health.TakeDamage(damage);
+                }
+                Destroy(gameObject);
             }
-
-            Destroy(gameObject);
-        }
-
-        // Дополнительная проверка для надежности
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            OnTriggerEnter2D(collision.collider);
         }
     }
 }
