@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 829937458}
   - component: {fileID: 829937460}
   - component: {fileID: 829937459}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,6 +917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagicProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 5673807776399582782, guid: 2d43ff244a43b274f8bb88c34a776fd0, type: 3}
+      propertyPath: collisionLayers.m_Bits
+      value: 1544
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1137,7 +1141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4054554681445624904, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4924784355103702164, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11909,7 +11913,7 @@ GameObject:
   - component: {fileID: 1782972807}
   - component: {fileID: 1782972806}
   - component: {fileID: 1782972805}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: NameLable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12048,7 +12052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4054554681445624904, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4924784355103702164, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12133,7 +12137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832728226171828341, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: obstacleLayer.m_Bits
-      value: 320
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 4054554681445624904, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_Name
@@ -12141,7 +12145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4054554681445624904, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4924784355103702164, guid: 98a4d4c293c8748459f2e9ad17668876, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12476,7 +12480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4302292175187178253, guid: 442560b0970433e42b197dc7640fb0d6, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6231502849084612106, guid: 442560b0970433e42b197dc7640fb0d6, type: 3}
       propertyPath: m_Color.a

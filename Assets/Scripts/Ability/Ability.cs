@@ -39,6 +39,11 @@ namespace Game.Abilities
                     nearest = e.transform;
                 }
             }
+
+            // Отладка
+            if (nearest != null)
+                Debug.DrawLine(player.transform.position, nearest.position, Color.red, 0.1f);
+
             return nearest;
         }
     }

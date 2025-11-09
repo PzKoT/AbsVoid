@@ -3756,7 +3756,7 @@ MonoBehaviour:
   pickupRadius: 1.5
   xpOrbLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2048
   experienceSystem: {fileID: 6411859959716869547}
 --- !u!70 &6838474594699370289
 CapsuleCollider2D:
