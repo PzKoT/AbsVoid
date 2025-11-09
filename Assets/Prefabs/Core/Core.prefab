@@ -3829,7 +3829,6 @@ MonoBehaviour:
   maxRange: 15
   projectilePrefab: {fileID: 3152324839954931603, guid: 2d43ff244a43b274f8bb88c34a776fd0, type: 3}
   projectileCount: 1
-  attackInterval: 3
 --- !u!1001 &3219751348886639646
 PrefabInstance:
   m_ObjectHideFlags: 0
